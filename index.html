@@ -1,20 +1,31 @@
 <html>
   <head>
-    <title>reCAPTCHA demo: Simple page</title>
+    <title>reCAPTCHA authorization page</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script defer>
+      if(!new URLSearchParams(window.location.search).get('redir')) {
+        document.body.innerHTML='<center><font color="#fff" face="monospace"><h1>You have not provided ?redir=</h1></font></center>'
+      } else {
+      document.getElementById('captcha').action=new URLSearchParams(window.location.search).get('redir')
+      }
+    </script>
+        <style>
+      input[type="submit"] {
+        background-color: #222;
+        color: #fff;
+        font-family: monospace;
+        border-radius: 3px;
+        border: none
+      }
+    </style>
   </head>
   <body bgcolor="#222">
     <center>
     <font color="#fff" face="monospace">
-    <form action="https://bfffggh.github.io">
-      <div class="g-recaptcha" data-sitekey="6LfQIWgpAAAAAKQ7RDC53owq09U6FWJpLos2sR0Z" data-theme="dark" data-size="normal" data-callback="m"></div>
+    <form id="captcha" action="https://bfffggh.github.io">
+      <div class="g-recaptcha" data-sitekey="6LfQIWgpAAAAAKQ7RDC53owq09U6FWJpLos2sR0Z" data-theme="dark" data-size="normal"></div>
       <input type="submit" value="Validate"></input>
     </form>
-    <script>
-      function m() {
-        lcation.href = 'https://bfffggh.github.io/article.html'
-      }
-    </script>
     </font>
   </center>
   </body>
