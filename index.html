@@ -5,12 +5,8 @@
     <script>
       document.addEventListener("DOMContentLoaded",()=>{
         document.getElementById('captcha').action=atob(new URLSearchParams(window.location.search).get('redir'))
+        setInterval(()=>{if(grecaptcha.getResponse()!=''){$('#submit').removeAttribute('disabled')}},50)
       })
-    </script>
-        <script>
-      function m() {
-        $('#submit').removeAttribute('disabled')
-      }
     </script>
     <style>
       input[type="submit"] {
