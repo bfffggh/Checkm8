@@ -2,6 +2,13 @@
   <head>
     <title>reCAPTCHA demo: Simple page</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script defer>
+      if(!new URLSearchParams(window.location.search).get('redir')) {
+        document.body.innerHTML='<center><font color="#fff" face="monospace"><h1>You have not provided ?redir=</h1></font></center>'
+      } else {
+      document.getElementById('captcha').action=new URLSearchParams(window.location.search).get('redir')
+      }
+    </script>
     <style>
       input[type="submit"] {
         background-color: #222;
