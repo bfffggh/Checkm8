@@ -23,9 +23,14 @@
     <font color="#fff" face="monospace">
     <form id="captcha">
       <div class="g-recaptcha" data-sitekey="6LfQIWgpAAAAAKQ7RDC53owq09U6FWJpLos2sR0Z" data-theme="dark" data-size="normal" data-callback="m"></div>
-      <input type="submit" value="Validate"></input>
+      <input id="submit" type="submit" value="Next" disabled></input>
     </form>
     </font>
   </center>
+    <script>
+      function m() {
+        $('#submit').removeAttribute('disabled')
+      }
+    </script>
   </body>
 </html>
