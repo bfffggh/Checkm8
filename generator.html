@@ -1,0 +1,8 @@
+<title>Captcha Generator</title>
+<input id="link" placeholder="URL here"></input><button onclick="generate()">Generate</button><br>
+<font face="monospace"><b>Generated URL: </b><b id="url">&lt;null&gt;</b></font>
+<script>
+  function generate() {
+    document.getElementById('url').innerHTML = 'https://bfffggh.github.io/captcha?redir='+btoa(document.getElementById('link').value).replace('=','')
+  }
+</script>
