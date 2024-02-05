@@ -7,6 +7,11 @@
         document.getElementById('captcha').action=atob(new URLSearchParams(window.location.search).get('redir'))
       })
     </script>
+        <script>
+      function m() {
+        $('#submit').removeAttribute('disabled')
+      }
+    </script>
     <style>
       input[type="submit"] {
         background-color: #222;
@@ -27,10 +32,5 @@
     </form>
     </font>
   </center>
-    <script>
-      function m() {
-        $('#submit').removeAttribute('disabled')
-      }
-    </script>
   </body>
 </html>
