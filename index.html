@@ -6,7 +6,7 @@
       document.addEventListener("DOMContentLoaded",()=>{
         document.getElementById('captcha').action=atob(new URLSearchParams(window.location.search).get('redir'))
         setTimeout(()=>{
-          setInterval(()=>{if(grecaptcha.getResponse()!=''){$('#submit').removeAttribute('disabled')}},50)
+          setInterval(()=>{if(grecaptcha.getResponse()!=''){document.querySelector('#submit').removeAttribute('disabled')}},50)
         },120)
       })
     </script>
