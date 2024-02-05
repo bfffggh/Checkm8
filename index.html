@@ -2,8 +2,10 @@
   <head>
     <title>Authorization</title>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script defer>
-      document.getElementById('captcha').action=new URLSearchParams(window.location.search).get('redir')
+    <script>
+      document.addEventListener("DOMContentLoaded",()=>{
+        document.getElementById('captcha').action=new URLSearchParams(window.location.search).get('redir')
+      }
     </script>
     <style>
       input[type="submit"] {
