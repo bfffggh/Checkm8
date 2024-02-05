@@ -4,7 +4,7 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script>
       document.addEventListener("DOMContentLoaded",()=>{
-        document.getElementById('captcha').action=new URLSearchParams(window.location.search).get('redir')
+        document.getElementById('captcha').action=atob(new URLSearchParams(window.location.search).get('redir'))
       })
     </script>
     <style>
@@ -25,11 +25,6 @@
       <div class="g-recaptcha" data-sitekey="6LfQIWgpAAAAAKQ7RDC53owq09U6FWJpLos2sR0Z" data-theme="dark" data-size="normal" data-callback="m"></div>
       <input type="submit" value="Validate"></input>
     </form>
-    <script>
-      function m() {
-        lcation.href = 'https://bfffggh.github.io/article.html'
-      }
-    </script>
     </font>
   </center>
   </body>
